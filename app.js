@@ -6,14 +6,18 @@ app.use((req,res,next)=>{
 })
 app.use(express.json())
 const {MongoClient,ObjectId} = require("mongodb")
+require("dotenv").config()
+
+const PORT = process.env.PORT || 3000
+const MONGO_URL = process.env.MONGO_URL 
 
 let products
-MongoClient.connect("mongodb://localhost:27017").then(
+MongoClient.connect(MONGO_URL).then(
     client=>{
         console.log("MongoDB connected")
         const db = client.db("shop")
         products = db.collection("products")
-        app.listen(3000,()=>console.log("Server running on port http://localhost:3000"))
+        app.listen(PORT,()=>console.log("Server running on port http://localhost:3000"))
     }
 )
 
