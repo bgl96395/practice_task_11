@@ -21,6 +21,13 @@ MongoClient.connect(MONGO_URL).then(
     }
 )
 
+app.get("/version",(req,res)=>{
+  res.json({
+    version:"1.1",
+    updated:"2026-01-21"
+  })
+})
+
 app.get("/",(req,res)=>{
     res.status(200).send(`
         <html>
@@ -41,7 +48,7 @@ app.get("/",(req,res)=>{
 })
 
 app.get("/api/products", async (req,res)=>{
-    const { category, minPrice, sort, fields } = req.query
+  const { category, minPrice, sort, fields } = req.query
 
   let filter = {}
   if (category) {
