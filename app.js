@@ -35,7 +35,6 @@ app.get("/",(req,res)=>{
                     <a href="/api/products">/api/products</a><br>
                     <a href="/api/products/697067d9a294db2300eab1d3">/api/products/1</a>
                 </h3>
-                <h3>New message</h3>
             </body>
         </html>
         `)
@@ -45,12 +44,6 @@ app.get("/version",(req,res)=>{
   res.json({
     version:"1.1",
     updatedAt: "2026-01-28"
-  })
-})
-
-app.get("/health",(req,res)=>{
-  res.json({
-    status:"OK"
   })
 })
 
