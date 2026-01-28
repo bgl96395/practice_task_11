@@ -40,6 +40,13 @@ app.get("/",(req,res)=>{
         `)
 })
 
+app.get("/version",(req,res)=>{
+  res.json({
+    version:"1.1",
+    updateAt:"2026-01-28"
+  })
+})
+
 app.get("/api/products", async (req,res)=>{
   const { category, minPrice, sort, fields } = req.query
 
