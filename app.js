@@ -41,13 +41,6 @@ app.get("/",(req,res)=>{
         `)
 })
 
-app.get("/version",(req,res)=>{
-  res.json({
-    version:"1.1",
-    updated:"2026-01-21"
-  })
-})
-
 app.get("/health",(req,res)=>{
   res.json({
     status:"OK"
